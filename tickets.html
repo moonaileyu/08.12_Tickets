@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search">
+        <label>Direction:</label>
+        <select id="direction">
+            <option value="Odesa-Lviv">Odesa - Lviv</option>
+            <option value="Odesa-Kyiv">Odesa - Kyiv</option>
+            <option value="Odesa-Vinnytsia">Odesa - Vinnytsia</option>
+        </select>
+
+        <label>Date:</label>
+        <input type="date" id="date">
+
+        <button id="searchButton">Search</button>
+    </div>
+
+    <div id="train" class="seats hidden">
+        <div id="seats"></div>
+        <p>Total price: <span id="total">0</span></p>
+        <button id="bookButton">Book</button>
+    </div>
+
+    <h2>My tickets</h2>
+    <table id="ticketsTable">
+        <thead>
+            <tr>
+                <th>Direction</th>
+                <th>Date</th>
+                <th>Seat</th>
+            </tr>
+        </thead>
+        <tbody id="ticketsBody"></tbody>
+    </table>
+
+    <script src="tickets.js"></script>
+    
+</body>
+</html>

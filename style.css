@@ -1,0 +1,43 @@
+@font-face 
+{
+    font-family: Raleway;
+    src: url(Raleway.ttf);
+}
+
+body
+{
+    font-family: Raleway;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.search
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+#train
+{
+    padding: 15px;
+}
+
+.hidden
+{
+    display: none;
+}
+
+#seats
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+table
+{
+    width: 300px;
+    border-collapse: collapse;
+}
