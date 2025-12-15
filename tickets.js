@@ -53,21 +53,42 @@ search.addEventListener("click", () => {
 
     train.classList.remove("hidden");
 
-    for(let i = 1; 1 <= seatsCount; i++)
+    for(let i = 1; i <= seatsCount; i++)
     {
-        const seat = document.createElement("div");
-        seat.textContent = i;
+        const seat = document.createElement("label");
         seat.className = "seat";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        const number = document.createElement("span");
+        number.textContent = i;
+
+        seat.style.gridRow = i%2 === 1 ? "1" : "2";
 
         if(bookedSeats.includes(i))
         {
+            checkbox.checked = true;
+            checkbox.disabled = true;
             seat.classList.add("booked");
         }
         else
         {
-            seat.onclick = () => selectedSeats(i, seat);
+            checkbox.onchange = () => {
+                if(checkbox.checked)
+                {
+                    selectedSeats.push(i);
+                }
+                else
+                {
+                    selectedSeats = selectedSeats.filter(s => s !== i);
+                }
+                total.textContent = selectedSeats.length * price;
+            };
         }
 
+        seat.appendChild(checkbox);
+        seat.appendChild(number);
         seats.appendChild(seat);
     }
 });
@@ -75,6 +96,7 @@ search.addEventListener("click", () => {
 book.addEventListener("click", () => {
     const direction = document.getElementById("direction").value;
     const date = document.getElementById("date").value;
+    document.getElementById("ticketsTable").classList.remove("hidden");
 
     selectedSeats.forEach(seat => {
         const row = document.createElement("tr");

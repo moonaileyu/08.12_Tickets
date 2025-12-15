@@ -16,12 +16,13 @@ body
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 10px;
+    padding: 10px 10px 40px 10px;
+    font-size: 16pt;
 }
 
 #train
 {
-    padding: 15px;
+    padding: 0px;
 }
 
 .hidden
@@ -31,40 +32,45 @@ body
 
 #seats
 {
+    max-width: 900px;
     display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 10px;
+    grid-template-columns: repeat(14, auto);
+    gap: 10px;;
+    padding: 10px 10px 30px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .seat
 {
-    width: 40px;
-    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 12pt;
+    padding: 5px;
     border: 1px solid black;
-    border-radius: 4px;
-    text-align: center;
-    line-height: 30px;
+}
+
+.seat input
+{
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 
-.seat.selected
+.seat.booked input
 {
-    background-color: red;
-}
-
-.seat.booked
-{
-    background-color: blue;
     cursor: not-allowed;
 }
 
-table, th, td
+table
 {
+    border-collapse: collapse;
     border: 1px solid black;
+    margin-top: 15px;
 }
 
 th, td
 {
-    padding: 5px;
-    text-align: center;
+    border: none;
+    padding: 6px 10px;
 }
