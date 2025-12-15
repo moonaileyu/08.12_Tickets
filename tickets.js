@@ -28,9 +28,65 @@ function generateSeats(count, max)
     return result;
 }
 
+function selectSeat(number, seat)
+{
+    if(selectedSeats.includes(number))
+    {
+        selectedSeats = selectedSeats.filter(s => s !== number);
+        seat.classList.remove("selected");
+    }
+    else
+    {
+        selectedSeats.push(number);
+        seat.classList.add("selected");
+    }
+
+    total.textContent = selectedSeats.length * price;
+}
+
 search.addEventListener("click", () => {
     seats.innerHTML = "";
     total.textContent = "0";
     selectedSeats = [];
+
     bookedSeats = generateSeats(bookedCount, seatsCount);
+
+    train.classList.remove("hidden");
+
+    for(let i = 1; 1 <= seatsCount; i++)
+    {
+        const seat = document.createElement("div");
+        seat.textContent = i;
+        seat.className = "seat";
+
+        if(bookedSeats.includes(i))
+        {
+            seat.classList.add("booked");
+        }
+        else
+        {
+            seat.onclick = () => selectedSeats(i, seat);
+        }
+
+        seats.appendChild(seat);
+    }
+});
+
+book.addEventListener("click", () => {
+    const direction = document.getElementById("direction").value;
+    const date = document.getElementById("date").value;
+
+    selectedSeats.forEach(seat => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+        <td>${direction}</td>
+        <td>${date}</td>
+        <td>${seat}</td>
+        `;
+
+        tickets.appendChild(row);
+    });
+
+    train.classList.add("hidden");
 });
