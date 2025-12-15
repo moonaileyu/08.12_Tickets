@@ -31,13 +31,40 @@ body
 
 #seats
 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
     gap: 10px;
 }
 
-table
+.seat
 {
-    width: 300px;
-    border-collapse: collapse;
+    width: 40px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.seat.selected
+{
+    background-color: red;
+}
+
+.seat.booked
+{
+    background-color: blue;
+    cursor: not-allowed;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+th, td
+{
+    padding: 5px;
+    text-align: center;
 }
