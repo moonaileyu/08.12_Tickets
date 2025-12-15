@@ -1,12 +1,12 @@
 @font-face 
 {
-    font-family: Raleway;
-    src: url(Raleway.ttf);
+    font-family: DMSans;
+    src: url(DMSans.ttf);
 }
 
 body
 {
-    font-family: Raleway;
+    font-family: DMSans;
     padding: 20px;
     background-color: antiquewhite;
 }
@@ -14,15 +14,35 @@ body
 .search
 {
     display: flex;
-    align-items: center;
     gap: 20px;
-    padding: 10px 10px 40px 10px;
+    padding-bottom: 20px;
     font-size: 16pt;
 }
 
-#train
+#direction, #date, #searchButton
 {
-    padding: 0px;
+    width: 150px;
+}
+
+hr
+{
+    border: none;
+    border-top: 1px solid rgb(170, 170, 170);;
+}
+
+#train p
+{
+    text-align: right;
+}
+
+#total
+{
+    text-align: right;
+}
+
+#bookButton
+{
+    float: right;
 }
 
 .hidden
@@ -32,22 +52,24 @@ body
 
 #seats
 {
-    max-width: 900px;
+    width: 800px;
     display: grid;
     grid-template-columns: repeat(14, auto);
-    gap: 10px;;
-    padding: 10px 10px 30px 10px;
-    border: 1px solid black;
+    gap: 5px;
+    margin-top: 30px;
+    padding: 15px 15px 30px 15px;
+    border: 1px solid rgb(170, 170, 170);
     border-radius: 10px;
 }
 
 .seat
 {
+    width: 40px;
     display: flex;
     align-items: center;
     font-size: 12pt;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(110, 110, 110);
 }
 
 .seat input
@@ -65,12 +87,12 @@ body
 table
 {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid rgb(170, 170, 170);
     margin-top: 15px;
 }
 
 th, td
 {
-    border: none;
-    padding: 6px 10px;
+    border: 1px solid rgb(170, 170, 170);
+    padding: 8px 30px;
 }
