@@ -30,19 +30,24 @@ hr
     border-top: 1px solid rgb(170, 170, 170);;
 }
 
-#train p
+#train
 {
-    text-align: right;
+    max-width: 820px;
 }
 
-#total
+#flex
 {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 #bookButton
 {
-    float: right;
+    height: 30px;
+    width: 100px;
 }
 
 .hidden

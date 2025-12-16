@@ -96,6 +96,7 @@ search.addEventListener("click", () => {
 book.addEventListener("click", () => {
     const direction = document.getElementById("direction").value;
     const date = document.getElementById("date").value;
+    document.getElementById("my").classList.remove("hidden");
     document.getElementById("ticketsTable").classList.remove("hidden");
 
     selectedSeats.forEach(seat => {
